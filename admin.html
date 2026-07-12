@@ -1,0 +1,59 @@
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>ADMIN FOR LEONI Event Meal Selection</title>
+
+</head>
+
+<body>
+
+  <div class="header">
+    <h1>LEONI</h1>
+  </div>
+   
+   <div class="admin-section">
+
+      <div class="admin-header">
+        <h2>Admin Dashboard</h2>
+
+        <div>
+          <input
+            type="text"
+            id="searchInput"
+            class="search-box"
+            placeholder="Search attendee..."
+            onkeyup="searchTable()"
+          >
+
+          <button class="export-btn" onclick="exportCSV()">
+            Export Excel File
+          </button>
+        </div>
+      </div>
+
+      <table id="submissionTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Meal Option</th>
+            <!-- <th>Additional Notes</th> -->
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+      </table>
+
+    </div>
+
+  </div>
+           <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+          <script type="module" src="js/script.js"></script>
+
+</body>
+</html>

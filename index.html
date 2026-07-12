@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="css/style.css">
+  <title>LEONI Event Meal Selection</title>
+
+</head>
+
+<body>
+
+  <div class="hero">
+    <h1><b>LEONI</b></h1>
+  </div>
+
+  <div class="container">
+      <div class="hero2">
+        <h2>LEONI QM & HSEE strategy meeting in Egypt 2026</h2>
+        <p>Select your preferred meal option</p>
+      </div>
+    <div class="form-section">
+
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+      </div>
+
+      <label>Select Your Lunch Option</label>
+
+      <div class="meal-grid">
+
+        <!-- OPTION 1 -->
+        <div class="meal-one" onclick="selectMeal(this,'Lamb Shank')">
+        <div class="meal-card">
+          <h2>Lamb Shank with Fattah</h2>
+
+          <div class="meal-text">
+            Slow-cooked lamb shank served over traditional Egyptian fattah — layers of fragrant rice, toasted bread, and rich garlic tomato sauce. Fattah is one of Egypt’s most beloved celebratory dishes, often enjoyed during family gatherings and special occasions, offering a warm taste of Egyptian hospitality and heritage.
+          </div>
+        </div>
+        
+          <div class="img">
+            <img class="meal-img" src="img/moza.png" alt="Meal image">
+          </div>
+        </div>
+        <!-- OPTION 2 -->
+         <div class="meal-one" onclick="selectMeal(this,'Mix Grilled')">
+          <div class="meal-card">
+          <h2>Mix Grilled with Khalta Rice</h2>
+
+          <div class="meal-text">
+            A classic Egyptian mixed grill featuring juicy kofta “meatball”, tender shish tawook “grilled chicken skewer”, kebab “grilled beef”, and grilled lamb chops, served with aromatic khalta rice. Grilled meats are a central part of Egyptian dining culture, bringing together bold Middle Eastern flavors and the spirit of sharing meals with family and friends.
+          </div>
+        </div>
+          <div class="img">
+            <img class="meal-img" src="img/kofta2.png" alt="Meal image">
+          </div>
+        </div>
+
+                <!-- OPTION 3 -->
+         <div class="meal-one" onclick="selectMeal(this,'Grilled Chicken')">
+          <div class="meal-card">
+          <h2>Grilled Chicken</h2>
+
+          <div class="meal-text">
+            Half grilled chicken infused with aromatic Egyptian spices and herbs, served with a rich smoky flavor that reflects the warmth of traditional Egyptian dining.
+          </div>
+        </div>
+          <div class="img">
+            <img class="meal-img" src="img/Grilled Chicken.png" alt="Meal image">
+          </div>
+        </div>
+
+            <!-- includes -->
+        <div class="includ">
+          <h2>Included appetizers</h2>
+
+          <div class="meal-text">
+            <p>
+              All main course selections are served with a complimentary
+              assortment of traditional Oriental cold and hot appetizers,
+              including:
+            </p>
+
+            <ul class="includes-list">
+              <li>Hummus</li>
+              <li>Tahini</li>
+              <li>Balady Salad</li>
+              <li>Kobeba</li>
+              <li>Sambousak</li>
+              <li>Waraa Enap</li>
+              <li>Mombar</li>
+              <li>Molokhia</li>
+              <li>Rice Muammar</li>
+               <li>Lamb Okra</li>
+              <li>Baba Ghanough</li>
+              <li>Alexandrian Veal Liver</li>
+            </ul>
+          </div>
+        </div>
+
+
+        <!-- <div class="notes-section">
+            <label for="additionalNotes">Additional Notes</label>
+            <div note-box-border>
+            <textarea
+              id="additionalNotes"
+              class="notes-box"
+              placeholder="Write any additional notes here..."
+            ></textarea>
+            </div>
+        </div> -->
+      </div>
+
+      <div class="success-message" id="successMessage">
+        ✅ Your lunch selection has been submitted successfully.
+      </div>
+
+      <button class="submit-btn" onclick="submitForm()">
+        Submit Lunch Selection
+      </button>
+
+      <!-- <div class="success-message" id="successMessage">
+        ✅ Your lunch selection has been submitted successfully.
+      </div> -->
+
+    </div>
+  </div>
+          <script type="module" src="js/script.js"></script>
+
+</body>
+</html>
