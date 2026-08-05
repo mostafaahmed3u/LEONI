@@ -55,56 +55,43 @@ window.submitForm = async function () {
 
   try {
 
-  await addDoc(
-    collection(db, "mealSubmissions"),
-    {
-      name: name,
-      meal: selectedMeal,
+    await addDoc(
+      collection(db, "mealSubmissions"),
+      {
+        name: name,
+        meal: selectedMeal,
 
-      date: now.toLocaleDateString(),
-      time: now.toLocaleTimeString(),
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString(),
 
-      timestamp: now.getTime()
-    }
-  );
+        timestamp: now.getTime()
+      }
+    );
 
-    const btn = document.getElementById("submitBtn");
+    document.getElementById("successMessage")
+      .style.display = "block";
 
-  btn.disabled = true;
-  btn.innerHTML = "✅ Your lunch selection has been submitted successfully.";
-  btn.style.background = "#d4f5df";
-  btn.style.color = "#157347";
-  btn.style.cursor = "default";
-  
-  document.getElementById("name").value = "";
+    document.getElementById("name").value = "";
 
-  document.querySelectorAll(".meal-one")
-    .forEach(c => c.classList.remove("selected"));
+    document.querySelectorAll(".meal-one")
+      .forEach(c => c.classList.remove("selected"));
 
-  selectedMeal = "";
+    selectedMeal = "";
 
-  setTimeout(() => {
+    setTimeout(() => {
+      document.getElementById("successMessage")
+        .style.display = "none";
+    }, 3000);
 
-    const btn = document.getElementById("submitBtn");
-    const success = document.getElementById("successMessage");
+    loadTable();
 
-  btn.disabled = false;
-  btn.innerHTML = "Submit Lunch Selection";
-  btn.style.background = "";
-  btn.style.color = "";
-  btn.style.cursor = "pointer";
+  } catch (error) {
 
-  }, 3000);
+    console.error(error);
 
-  loadTable();
-
-} catch (error) {
-
-  console.error(error);
-
-  alert("Something went wrong.");
+    alert("Something went wrong.");
+  }
 }
-};
 
 ///////////////////////////////
 
