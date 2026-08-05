@@ -438,3 +438,57 @@ textarea{
     font-size: 12px;
   }
 }
+
+
+/* ================= Desktop Only ================= */
+@media (min-width: 769px){
+
+    .meal-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        align-items: start;
+    }
+
+    .meal-one{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .meal-card{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+    }
+
+    .meal-card .meal-text{
+        flex: 1;
+    }
+
+    .includ{
+        grid-column: 2 / span 1;
+        width: 150%;
+        justify-self: center;
+        margin-top: 10px;
+    }
+
+}
+
+
+
+
+/* Desktop Only */
+@media (min-width: 769px){
+
+    .includ{
+        grid-column: 1 / -1; 
+        width: 55%;            
+        justify-self: center; 
+        margin-top: 20px;
+    }
+
+}
+
+

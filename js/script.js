@@ -55,43 +55,52 @@ window.submitForm = async function () {
 
   try {
 
-    await addDoc(
-      collection(db, "mealSubmissions"),
-      {
-        name: name,
-        meal: selectedMeal,
+  await addDoc(
+    collection(db, "mealSubmissions"),
+    {
+      name: name,
+      meal: selectedMeal,
 
-        date: now.toLocaleDateString(),
-        time: now.toLocaleTimeString(),
+      date: now.toLocaleDateString(),
+      time: now.toLocaleTimeString(),
 
-        timestamp: now.getTime()
-      }
-    );
+      timestamp: now.getTime()
+    }
+  );
 
-    document.getElementById("successMessage")
-      .style.display = "block";
+  // Show success message
+  document.getElementById("successMessage").style.display = "block";
 
-    document.getElementById("name").value = "";
+  // Hide submit button but keep its space
+  document.getElementById("submitBtn").style.visibility = "hidden";
 
-    document.querySelectorAll(".meal-one")
-      .forEach(c => c.classList.remove("selected"));
+  // Clear form
+  document.getElementById("name").value = "";
 
-    selectedMeal = "";
+  document.querySelectorAll(".meal-one")
+    .forEach(c => c.classList.remove("selected"));
 
-    setTimeout(() => {
-      document.getElementById("successMessage")
-        .style.display = "none";
-    }, 3000);
+  selectedMeal = "";
 
-    loadTable();
+  // Hide success message after 3 seconds
+  setTimeout(() => {
 
-  } catch (error) {
+    document.getElementById("successMessage").style.display = "none";
 
-    console.error(error);
+    // Show submit button again
+    document.getElementById("submitBtn").style.visibility = "visible";
 
-    alert("Something went wrong.");
-  }
+  }, 3000);
+
+  loadTable();
+
+} catch (error) {
+
+  console.error(error);
+
+  alert("Something went wrong.");
 }
+};
 
 ///////////////////////////////
 
