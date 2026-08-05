@@ -270,7 +270,7 @@ textarea{
   background:#123B6D;
 }
 
-/* .success-message{
+.success-message{
   display:none;
   margin-top:25px;
   background:#d4f5df;
@@ -280,20 +280,8 @@ textarea{
   text-align:center;
   font-weight:bold;
   animation:fadeIn 0.4s ease;
-} */
-.success-message{
-    display: none;
-    width: 100%;
-    margin-top: 30px;
-    background: #d4f5df;
-    color: #157347;
-    padding: 18px;
-    border-radius: 14px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    animation: fadeIn .35s ease;
 }
+
 @media(max-width:768px){
   body{
     overflow: auto;
@@ -502,5 +490,14 @@ textarea{
     }
 
 }
+
+
+
+
+
+
+
+
+
 
 
