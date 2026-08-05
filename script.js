@@ -68,11 +68,13 @@ window.submitForm = async function () {
     }
   );
 
-  const btn = document.getElementById("submitBtn");
-  const success = document.getElementById("successMessage");
+    const btn = document.getElementById("submitBtn");
 
-  btn.style.display = "none";
-  success.style.display = "block";
+  btn.disabled = true;
+  btn.innerHTML = "✅ Your lunch selection has been submitted successfully.";
+  btn.style.background = "#d4f5df";
+  btn.style.color = "#157347";
+  btn.style.cursor = "default";
   
   document.getElementById("name").value = "";
 
@@ -81,14 +83,16 @@ window.submitForm = async function () {
 
   selectedMeal = "";
 
-  // Hide success message after 3 seconds
   setTimeout(() => {
 
     const btn = document.getElementById("submitBtn");
     const success = document.getElementById("successMessage");
 
-    success.style.display = "none";
-    btn.style.display = "block";
+  btn.disabled = false;
+  btn.innerHTML = "Submit Lunch Selection";
+  btn.style.background = "";
+  btn.style.color = "";
+  btn.style.cursor = "pointer";
 
   }, 3000);
 
