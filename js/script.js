@@ -61,18 +61,8 @@ window.submitForm = async function () {
         name: name,
         meal: selectedMeal,
 
-        const now = new Date();
-
-          await addDoc(collection(db, "orders"), {
-            ...data,
-            date: now.toLocaleDateString("en-GB", {
-              timeZone: "Africa/Cairo"
-            }),
-            time: now.toLocaleTimeString("en-GB", {
-              timeZone: "Africa/Cairo",
-              hour12: false
-            })
-          });
+        date: now.toLocaleDateString(),
+        time: now.toLocaleTimeString(),
 
         timestamp: now.getTime()
       }
